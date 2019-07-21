@@ -1,0 +1,28 @@
+﻿@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+</head>
+<body>
+	<p>IsAuthenticated: @User.Identity.IsAuthenticated</p>
+	<p>Name: @User.Identity.Name</p>
+	<p>IdentityType: @User.Identity.GetType().FullName</p>
+	<p>Claims:</p>
+	<ul>
+		@foreach (var item in User.Claims)
+		{
+		<li>@item.Type : @item.Value</li>
+		}
+
+	</ul>
+	<p>
+		<a href="~/home/logout">logout</a>
+	</p>
+</body>
+</html>
